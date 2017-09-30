@@ -1,0 +1,75 @@
+# We could add depends_on: on each module
+---
+modules:
+    # Vpc
+    modules/vpc:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/vpc"
+    # ApiGateway
+    modules/api_gateway:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/api_gateway"
+    # AutoScalingGroup
+    modules/asg:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/asg"
+    # DynamoDB
+    modules/dynamodb:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/dynamodb"
+    # Elastic Load Balancer
+    modules/elb:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/elb"
+    # Elastic Map Reduce
+    modules/emr:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/emr"
+    # Iam Role
+    modules/iam:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/iam"
+    # Kinesis
+    modules/kinesis:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/kinesis"
+    # Launch Configuration
+    modules/lc:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/lc"
+    # RDS
+    modules/rds:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/rds"
+    # SNS
+    modules/sns:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/sns"
+
+####################
+#     Stacks 	   #
+####################
+stacks:    
+    # Stack Grafana
+    stack/bastion:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "stack/stack_bastion"
+    # Stack Grafana
+    stack/grafana:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "stack/stack_grafana"
+    # Stack Redshift
+    stack/redshift:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "stack/stack_redshift"
+#####################
+#     Includes      #
+#####################
+#
+# In this section we could see how generic or particular includes can be added.
+# Includes are supposed to be in the same branch as the templates that uses them.
+# but you never know when you have one that is used on multiple places.
+# includes:
+#   include/task_def01:
+#       source:
+#       version:
