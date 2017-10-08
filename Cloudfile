@@ -1,67 +1,75 @@
-# We could add depends_on: on each module
 ---
 modules:
     # Vpc
     modules/vpc:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/vpc"
+      version: "modules/vpc_0.1.0"
     # ApiGateway
     modules/api_gateway:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/api_gateway"
+      version: "modules/api_gateway_0.1.0"
     # AutoScalingGroup
     modules/asg:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/asg"
+      version: "modules/asg_0.1.0"
+      depends_on: [ modules/lc ]
     # DynamoDB
     modules/dynamodb:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/dynamodb"
+      version: "modules/dynamodb_0.1.0"
     # Elastic Load Balancer
     modules/elb:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/elb"
+      version: "modules/elb_0.1.0"
     # Elastic Map Reduce
     modules/emr:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/emr"
+      version: "modules/emr_0.1.0"
     # Iam Role
     modules/iam:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/iam"
+      version: "modules/iam_0.1.0"
     # Kinesis
     modules/kinesis:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/kinesis"
+      version: "modules/kinesis_0.1.0"
     # Launch Configuration
     modules/lc:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/lc"
+      version: "modules/lc_0.2.0"
     # RDS
     modules/rds:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/rds"
+      version: "modules/rds_0.1.0"
     # SNS
     modules/sns:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "modules/sns"
+      version: "modules/sns_0.1.0"
+    # Codedeploy
+    modules/cd:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/cd_0.1.0"
+    # CNAME
+    modules/cname:
+      source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
+      version: "modules/cname_0.1.0"
 
 ####################
-#     Stacks 	   #
+#     Stacks      #
 ####################
-stacks:    
+stacks:
     # Stack Grafana
     stack/bastion:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "stack/stack_bastion"
+      version: "stack/stack_bastion_0.1.0"
     # Stack Grafana
     stack/grafana:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "stack/stack_grafana"
+      version: "stack/stack_grafana_0.1.0"
     # Stack Redshift
     stack/redshift:
       source : "git@github01.zappos.net:Integ/cloudformation-ccoe.git"
-      version: "stack/stack_redshift"
+      version: "stack/stack_redshift_0.1.0"
 #####################
 #     Includes      #
 #####################
